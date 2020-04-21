@@ -1,0 +1,46 @@
+.order
+  &__wrap
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+  &__title
+    color: $white
+    font: 40px $mainFont
+    font-weight: 700
+    text-align: center
+    text-transform: uppercase
+    margin-bottom: 40px
+  &__items
+    display: flex
+    flex-direction: row
+    justify-content: center
+  &__figure
+    cursor: pointer
+    &:hover
+      transition: background .5s ease
+      & .order__image
+        background: $lightBlue
+        transition: background .5s ease
+  &__image
+    padding: 30px 20px
+    border: 1px solid $lightBlue
+    display: flex
+    flex-direction: column
+    justify-content: center
+  &__row
+    display: flex
+    flex-direction: row
+    justify-content: center
+  &__dot
+    background: $white
+    border-radius: 50%
+    width: 10px
+    height: 10px
+    margin: 4px
+  &__caption
+    color: $white
+    font: 14px $mainFont
+    font-weight: 700
+    margin-top: 15px
+    letter-spacing: 8px

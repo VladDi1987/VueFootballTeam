@@ -1,0 +1,47 @@
+.btn
+  outline: none
+  cursor: pointer
+  text-decoration: none
+  display: block
+  width: 100%
+  text-align: center
+  background: $lightBlue
+  border: 1px solid $lightBlue
+  font: 12px $mainFont
+  color: $white
+  font-weight: 600
+  letter-spacing: 0.54px
+  transition: 1s
+  &:focus
+    outline: none
+  &-wrap_center
+    margin-top: 30px
+    display: flex
+    justify-content: center
+  &_main
+    width: 180px
+    height: 50px
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 0 6px
+    cursor: pointer
+    transition: all ease-in-out 300ms
+    &:hover
+      color: $white
+      border: 1px solid $white
+      background: transparent
+  &_bg
+    background: none
+    padding: 0 30px
+  &_selected
+    background: #42b983
+    border: 1px solid #42b983
+    &:hover
+      background: #42b983
+  &_submit
+    &:hover
+      color: $lightBlue
+      border: 1px solid $lightBlue
+      background: transparent

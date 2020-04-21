@@ -1,0 +1,21 @@
+.statistics-counter
+  display: flex
+  flex-direction: row
+  color: $white
+  font-family: $mainFont
+  @for $i from 1 through 3
+    div:nth-child(#{$i}) > div
+      animation-delay: $i*0.1s
+  &__box
+    padding: 0 28px 0 0
+    text-align: center
+    &:last-child
+      padding: 0
+  &__number
+    font-size: 30px
+    font-weight: 700
+    margin-bottom: 6px
+  &__info
+    font-size: 12px
+    font-weight: 700
+    line-height: 20px

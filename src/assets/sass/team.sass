@@ -1,0 +1,30 @@
+.team
+  width: 540px
+  height: 680px
+  &__inner
+    position: relative
+    width: 100%
+    height: 100%
+    z-index: 100
+  &__row
+    position: absolute
+    height: 88px
+    width: 100%
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    z-index: 9
+    &_striker
+      bottom: 60%
+    &_midfielder
+      bottom: 40%
+      & .player
+        margin: 0 3px
+    &_defender
+      bottom: 20%
+    &_goalkeeper
+      bottom: 10px
+    &_coach
+      right: -100px
+      top: 40px
+      width: auto

@@ -1,0 +1,39 @@
+.message
+  position: absolute
+  z-index: 999
+  bottom: 0
+  border-radius: 5px 5px 0 0
+  min-width: 260px
+  transition: 1і
+  @include center-x
+  &_error
+    background: $bloody
+  &_success
+    color: $white
+    background: $accept
+  &-content
+    padding: 30px
+    position: relative
+    color: $white
+    font: 12px $mainFont
+    text-align: center
+  &-close
+    position: absolute
+    right: 10px
+    top: 10px
+    width: 20px
+    height: 20px
+    cursor: pointer
+    &:before,
+    &:after
+      @include pseudo
+      height: 20px
+      width: 2px
+      background: $white
+      left: 50%
+      top: 50%
+      opacity: 0.8
+    &:before
+      transform: translate(-50%, -50%) rotate(45deg)
+    &:after
+      transform: translate(-50%, -50%) rotate(-45deg)

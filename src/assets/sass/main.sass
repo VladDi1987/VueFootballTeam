@@ -1,0 +1,44 @@
+.main
+  &__wrap
+    height: 100%
+    position: relative
+    z-index: 3
+    max-width: 1280px
+    margin: 0 auto
+    padding: 0 15px
+  &__container
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    height: calc(100vh - 115px)
+  &__column
+    &_left
+      width: 100%
+      max-width: 360px
+      display: flex
+      align-items: center
+      z-index: 10
+    &_right
+      width: 60%
+      position: absolute
+      right: 15px
+      bottom: 0
+      z-index: -1
+      & img
+        max-width: 100%
+        height: auto
+  &__content
+    padding: 26px 0
+  &__title
+    color: $white
+    font: 52px $mainFont
+    font-weight: 900
+    line-height: 55px
+    text-transform: uppercase
+  &__subtitle
+    color: $white
+    font: 18px $mainFont
+    font-weight: 900
+    letter-spacing: 0.3px
+    margin: 25px 0 40px 0
+    text-transform: uppercase

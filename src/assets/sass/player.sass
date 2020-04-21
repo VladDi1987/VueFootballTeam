@@ -1,0 +1,57 @@
+.player
+  position: relative
+  width: 80px
+  display: flex
+  flex-direction: column
+  align-items: center
+  z-index: 10
+  &__img
+    position: relative
+    height: 80px
+    width: 80px
+    border-radius: 50%
+    overflow: hidden
+    background-repeat: no-repeat
+    background-position: center 10px
+    background-size: contain
+    background-color: $lightBlue
+    border: solid 2px #ddd
+    box-shadow: inset 0 0 6px 0 $black
+  &__name
+    text-align: center
+    width: 120px
+    bottom: -16px
+    font: 10px $mainFont
+    color: $white
+    font-weight: bold
+    will-change: auto
+    @include center-x
+  &__remove
+    position: absolute
+    width: 30px
+    height: 30px
+    top: -10px
+    right: -15px
+    &:before,
+    &:after
+      @include pseudo
+      height: 20px
+      width: 2px
+      background: $white
+      left: 50%
+      top: 50%
+    &:before
+      transform: translate(-50%, -50%) rotate(45deg)
+    &:after
+      transform: translate(-50%, -50%) rotate(-45deg)
+    &:hover,
+    &:focus
+      opacity: 0.8
+      color: $white
+      text-decoration: none
+      cursor: pointer
+  &-field
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-end

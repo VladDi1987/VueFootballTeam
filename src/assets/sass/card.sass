@@ -1,0 +1,36 @@
+.card
+  height: calc(100vh - 200px)
+  min-height: 680px
+  &-body
+    position: relative
+    display: flex
+    flex-direction: row
+    height: 100%
+  &__image
+    width: 100%
+    max-width: 50%
+    position: relative
+    display: flex
+    align-items: flex-end
+    background-position: bottom !important
+    background-size: contain !important
+    background-repeat: no-repeat !important
+    & img
+      width: 100%
+      height: auto
+  .statistics
+    width: 100%
+    max-width: 460px
+    margin: 0 0 0 40px
+    &__header
+      color: $white
+      margin-bottom: 36px
+    &__head
+      font-size: 28px
+      font-weight: 700
+      text-transform: uppercase
+      margin-bottom: 20px
+    &__subtitle
+      font-size: 14px
+      text-transform: uppercase
+      font-weight: 700

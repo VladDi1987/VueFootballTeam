@@ -1,0 +1,41 @@
+.modal
+  &__overlay
+    position: fixed
+    top: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.7)
+    z-index: 999
+    transition: opacity 0.2s ease
+  &__wrap
+    @include center-xy
+    margin-bottom: 20px
+    width: 100%
+    max-width: 300px
+    border-radius: 3px
+    background: $white
+    padding: 30px 20px
+
+  &__title
+    line-height: 34px
+    padding-bottom: 24px
+    font: 32px $mainFont
+    font-weight: bold
+  
+  
+.fadeIn-enter
+  opacity: 0
+
+
+.fadeIn-leave-active
+  opacity: 0
+  transition: all 0.2s step-end
+
+
+.fadeIn-enter .modal,
+.fadeIn-leave-active.modal
+  transform: scale(1.1)

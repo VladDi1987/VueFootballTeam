@@ -1,0 +1,74 @@
+.curtain
+  display: flex
+  align-items: center
+  width: 700px
+  height: 100%
+  background: rgba(14, 20, 43, 0.63)
+  box-shadow: 0 0 80px 2px rgba(0, 0, 0, 0.5)
+  position: fixed
+  right: -700px
+  top: 0
+  bottom: 0
+  z-index: 9
+  margin-top: 0
+  transition: all 0.2s ease-in
+  &_active
+    will-change: right
+    right: 0
+    transition: 0.25s ease-in-out
+    & .curtain__arrow
+      transform: rotate(180deg)
+  &_full .continue
+    bottom: 0
+  &-body
+    width: 560px
+    height: 590px
+    position: relative
+    padding: 16px 0
+    max-width: 1280px
+    margin: 0 auto 0 20px
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+  &__counter
+    position: absolute
+    top: 10px
+    font: 14px $mainFont
+    color: $white
+  &__wrap
+    width: 560px
+    height: 590px
+    position: relative
+    padding: 16px 0
+    max-width: 1280px
+    margin: 0 auto 0 20px
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+  &-line
+    background: $lightBlue
+    cursor: pointer
+    font: 10px $mainFont
+    color: $white
+    width: 30px
+    height: 100%
+    position: absolute
+    top: 0
+    bottom: 0
+    left: -30px
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    align-items: center
+    text-transform: uppercase
+    & p
+      position: relative
+      text-align: center
+      text-orientation: upright
+      writing-mode: vertical-rl
+  &__arrow
+    transition: all 0.2s ease-in
+    position: absolute
+    top: -22px
+    right: 0
+    width: 14px

@@ -1,0 +1,22 @@
+.summary
+  color: $white
+  margin: 36px 0
+  &-list
+    padding: 0 0 0 18px
+    &__item
+      font: 14px $mainFont
+      font-weight: 700
+      line-height: 15px
+      position: relative
+      margin: 0 0 20px 0
+      text-shadow: 2px 2px 3px $black
+      &:last-child
+        margin: 0
+      &:before
+        @include pseudo
+        width: 4px
+        height: 4px
+        background: $white
+        border-radius: 50%
+        left: -15px
+        top: 5px

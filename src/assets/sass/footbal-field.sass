@@ -1,0 +1,162 @@
+// Palette
+$field-bg-color      :#eeeeee
+$line-color          :rgba(255,255,255,0.5)
+
+// Field dimensions
+
+$field-y             :800px
+$field-x             :($field-y * 0.8)
+$field-ratio         :($field-x / $field-y)
+$field-side-y        :8px
+$field-rot           :90deg
+$field-buffer        :4%
+$line-x              :3px
+$line-circle-x       :25%
+
+
+
+.stage
+  perspective: 800px
+  width: 540px
+  position: relative
+  &-team
+    height: 680px
+    bottom: -80px
+    position: relative
+    transform: translateZ(-210px)
+    transform-style: preserve-3d
+    z-index: 1
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+  &-field
+    transform: rotateX(40deg) translateY(-50%) translateZ(0px)
+    height: 680px
+    margin: 0 auto
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+
+
+.field
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: $field-bg-color
+  z-index: -1
+  box-sizing: content-box
+  backface-visibility: hidden
+  &__texture
+    width: 100%
+    height: 100%
+    position: absolute
+    z-index: 3
+    &_grass
+      background-image: url('../static/img/grass2.png')
+      background-repeat: repeat
+      background-size: 75px 75px
+      background-position: -20px -20px
+    &_gradient
+      background-image: linear-gradient(to top, rgba(0,0,0,0.2), transparent)
+      z-index: 4
+    &_gradient-b
+      opacity: 0
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), transparent)
+      z-index: 4
+
+.field__side
+  position: absolute
+  width: 100%
+  height: 8px
+  z-index: 10
+  bottom: -6px
+  left: 0
+  background-color: #312B23
+  .texture &
+    background-color: #312B23
+
+.field__line
+  position: absolute
+  width: 100%
+  height: $line-x
+  z-index: 4
+  &_goal
+    width: 16%
+    height: 6%
+    border: solid $line-x $line-color
+    border-bottom: none
+    left: 0
+    right: 0
+    margin: auto
+    bottom: $field-buffer
+  &_goal--far
+    top: $field-buffer
+    bottom: auto
+    border: solid $line-x $line-color
+    border-top: none
+  &_penalty-arc
+    width: 20%
+    height: 20%
+    overflow: hidden
+    bottom: ($field-buffer + 16%)
+    left: 0
+    right: 0
+    margin: auto
+    &:after
+      position: absolute
+      top: 75%
+      width: 100%
+      height: 100%
+      left: 0
+      content: ' '
+      display: block
+      border-radius: 50% 50% 0 0
+      border: solid $line-x $line-color
+      border-bottom: none
+      box-sizing: border-box
+  &_penalty
+    width: 44%
+    height: 16%
+    border: solid $line-x $line-color
+    border-bottom: none
+    left: 0
+    right: 0
+    margin: auto
+    bottom: $field-buffer
+  &_penalty-arc--far
+    bottom: auto
+    top: ($field-buffer + 16%)
+    &:after
+      bottom: 75%
+      top: auto
+      border: solid $line-x $line-color
+      border-top: none
+      border-radius: 0 0 50% 50%
+  &_penalty--far
+    top: $field-buffer
+    bottom: auto
+    border: solid $line-x $line-color
+    border-top: none
+  &_outline
+    width: (100% - ($field-buffer * 2))
+    height: (100% - ($field-buffer * 2))
+    top: $field-buffer
+    left: $field-buffer
+    border: solid $line-x $line-color
+  &_mid
+    top: 50%
+    width: (100% - ($field-buffer * 2))
+    left: $field-buffer
+    background-color: $line-color
+  &_circle
+    width: 20%
+    height: 20%
+    top:  0
+    left: 0
+    right: 0
+    bottom: 0
+    margin: auto
+    border: solid $line-x $line-color
+    border-radius: 50%
